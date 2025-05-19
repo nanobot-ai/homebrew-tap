@@ -5,31 +5,28 @@
 class Nanobot < Formula
   desc "Nanobot cli"
   homepage "https://nanobot.ai"
-  version "0.0.3"
+  version "0.0.1"
 
   on_macos do
-    url "https://github.com/nanobot-ai/nanobot/releases/download/v0.0.3/nanobot_darwin_x86_64.tar.gz"
-    sha256 "04f2df69ebf4e035b6ebafa5286d94a346dc13952870555a8212b78d0b53d42c"
+    url "https://github.com/nanobot-ai/nanobot/releases/download/v0.0.1/nanobot_darwin_all.tar.gz"
+    sha256 "fd31900bfa4cf0a6d95bf144c86537a8e43d29d6fb071bc651b1516d6bf298a2"
 
     def install
       bin.install "nanobot"
-    end
-
-    if Hardware::CPU.arm?
-      def caveats
-        <<~EOS
-          The darwin_arm64 architecture is not supported for the Nanobot
-          formula at this time. The darwin_amd64 binary may work in compatibility
-          mode, but it might not be fully supported.
-        EOS
-      end
     end
   end
 
   on_linux do
     if Hardware::CPU.intel? and Hardware::CPU.is_64_bit?
-      url "https://github.com/nanobot-ai/nanobot/releases/download/v0.0.3/nanobot_linux_x86_64.tar.gz"
-      sha256 "f34bc363b768c1afcddb2581a0d822a724048776091c6cdc0a25198dbaeebb6b"
+      url "https://github.com/nanobot-ai/nanobot/releases/download/v0.0.1/nanobot_linux_x86_64.tar.gz"
+      sha256 "177f77cc5fcd31c13144483cfb5c873b467ecad9afc1bb14ce713582e2399b34"
+      def install
+        bin.install "nanobot"
+      end
+    end
+    if Hardware::CPU.arm? and Hardware::CPU.is_64_bit?
+      url "https://github.com/nanobot-ai/nanobot/releases/download/v0.0.1/nanobot_linux_arm64.tar.gz"
+      sha256 "15a200ef534352430a0122aaec9a01a5d1cf51feb724aa339b52dbfa25675187"
       def install
         bin.install "nanobot"
       end
