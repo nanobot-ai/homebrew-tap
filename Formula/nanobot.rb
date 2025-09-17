@@ -5,11 +5,11 @@
 class Nanobot < Formula
   desc "Nanobot cli"
   homepage "https://nanobot.ai"
-  version "0.0.16"
+  version "0.0.17"
 
   on_macos do
-    url "https://github.com/nanobot-ai/nanobot/releases/download/v0.0.16/nanobot_darwin_all.tar.gz"
-    sha256 "89c38ddb506a8f62be056771dd38adc3e98ae3c0a5052900366f5ca3c78ac597"
+    url "https://github.com/nanobot-ai/nanobot/releases/download/v0.0.17/nanobot_darwin_all.tar.gz"
+    sha256 "499ebb1266b36f7731219b1225c8295db179bc58386339b067299e598ae03335"
 
     def install
       bin.install "nanobot"
@@ -18,15 +18,15 @@ class Nanobot < Formula
 
   on_linux do
     if Hardware::CPU.intel? && Hardware::CPU.is_64_bit?
-      url "https://github.com/nanobot-ai/nanobot/releases/download/v0.0.16/nanobot_linux_x86_64.tar.gz"
-      sha256 "4dd4c9039e839320e7369ffe7f0b78167704f829bf1ee131047756f5e666548b"
+      url "https://github.com/nanobot-ai/nanobot/releases/download/v0.0.17/nanobot_linux_x86_64.tar.gz"
+      sha256 "1914ad3006c39c5dcf511112056cb7dec856f77c0a306f6530a6c8618b44e7a0"
       def install
         bin.install "nanobot"
       end
     end
     if Hardware::CPU.arm? && Hardware::CPU.is_64_bit?
-      url "https://github.com/nanobot-ai/nanobot/releases/download/v0.0.16/nanobot_linux_arm64.tar.gz"
-      sha256 "b460be7238953a06d128bfbd397b2abb8c07ec9d78e0691a4f757e027554d6bf"
+      url "https://github.com/nanobot-ai/nanobot/releases/download/v0.0.17/nanobot_linux_arm64.tar.gz"
+      sha256 "de0df1530e4d1aeeb5cb008b5494931fec0f2bd7c86350acaf439ec57aaa6c38"
       def install
         bin.install "nanobot"
       end
